@@ -1,0 +1,288 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.container{
+    height: 100vh;
+    height: auto;
+    display:grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: "nav nav nav nav nav nav nav nav nav nav"
+    "pic pic pic pic pic pic pic pic pic pic"
+    "abt abt abt abt abt abt abt abt abt abt"
+    "cont cont cont cont cont cont cont cont cont cont"
+    "foot foot foot foot foot foot foot foot foot foot";
+}
+
+.ourLogo {
+    padding: 0 20px 0 20px;
+    width: 130px;
+    padding: 15px;
+    /* display: flex; */
+  }
+  .ourLogo img {
+    width: 80%;
+  }
+  
+  nav {
+    width: 100%;
+    grid-area: nav;
+    background-color: floralwhite;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-rows: auto;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    box-shadow: 1px 3px 20px #0000006b;
+  }
+  nav ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-rows: auto;
+    margin: 20px;
+    /* align-items: center; */
+  }
+  nav ul li {
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+  }
+  nav ul li::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0px;
+    background-color: #d91d1d;
+    left: -100%;
+    transition: left 1s;
+    background-color: rgb(200, 182, 107);
+  }
+  nav ul li:hover::before {
+    left: 0;
+  }
+  
+  /* li {
+    display: inline;
+  } */
+  nav a {
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #444;
+    position: relative;
+  }
+  nav a p {
+    padding-bottom: 5px;
+  }
+  .dropdown {
+    font-weight: bolder;
+    font-size: 20px;
+    color: #444;
+    position: relative;
+    border: none;
+    outline: none;
+ 
+  }
+  .menu {
+    position: relative;
+    /* overflow: hidden; */
+  }
+  .submenu {
+    position: absolute;
+    /* left: 7px; */
+    height: fit-content;
+    display: none;
+    opacity: 0;
+    background-color: floralwhite;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: opacity 0.5s;
+  
+    /* z-index: 9999; */
+  }
+  .submenu a {
+    border-bottom: rgba(200, 181, 107, 0.214) solid 3px;
+    color: #444;
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    text-align: center;
+  }
+  .menu:hover .submenu {
+    opacity: 1;
+    display: block;
+  }
+  
+  /* end navBar */
+   
+  @media (max-width: 768px) {
+   nav {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      justify-items: center;
+      padding: 10px 0 10px 0;
+      position: static;
+    }
+    nav ul {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
+    nav ul li {
+      padding: 10px 0 10px 0;
+    }
+    nav ul .submenu {
+      z-index: 9999;
+    }
+  }
+  @media (min-width: 769px) and (max-width: 1115px) {
+    nav{
+      display:grid; 
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      justify-items: stretch;
+      padding: 10px 0 10px 0;
+    } 
+    nav ul {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
+    nav ul li {
+      padding: 10px 0 10px 0;
+    }
+    .ourLogo {
+      text-align: center;
+      padding: 10;
+      width: 25%; 
+   }
+  }
+  
+.first{
+    grid-area: pic;
+}
+
+#second{
+    grid-area: abt;
+    background-image: url(../pictures/5.avif);
+}
+
+.abt{
+    display: grid;
+    padding: 30px 0px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+}
+.abt h1{
+    font-family:"Great Vibes", cursive ;
+    color: rgb(200, 182, 107);
+    padding: 10px;
+    font-size: xx-large;
+}
+.paragraph{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 600px;
+    height: 450px;
+    font-family: "Josefin Sans", sans-serif;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: whitesmoke;
+}
+#third{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-area: cont;
+    background-color: rgb(231, 231, 231);
+}
+.contactus{
+    display: grid;
+    padding: 30px 0px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    justify-items: center;
+}
+.contactdetails{
+    display: grid;
+    background-color: white;
+    margin-top: 20px;
+    width: 450px;
+    height: 350px;
+    border-radius: 20px;
+    
+}
+.contactdetails h1{
+    text-align: center;
+    font-family:"Great Vibes", cursive ;
+    color: rgb(200, 182, 107);
+    margin: 10px 20px 20px 10px;
+    font-size: xx-large;
+}
+.contactdetails label{
+    font-size: medium;
+    margin: 50px;
+    padding: 10px;
+}
+
+
+.name{
+    margin: 10px 0 10px 40px;
+    border-radius: 30px;
+    width: 300px;
+    height: 30px;
+}
+
+.msg{
+    margin: 10px 0 10px 40px;
+    border-radius: 30px;
+    width: 300px;
+    height: 70px;
+}
+
+.btn{
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+    border: 0;
+    font-size: large;
+    cursor: pointer;
+    background-color: rgb(200, 182, 107);
+    margin-left: 100px;
+    width: 100px;
+    height: 50px;
+    margin: 10px 50px 0 0;
+}
+
+footer{
+  display: grid;
+  grid-template-columns: repeat( 3, auto);
+  grid-area: foot;
+  background-color: black;
+  color:rgb(200, 182, 107) ;
+  justify-items: center;
+}
+
+footer a{
+text-decoration: none;
+color:rgb(200, 182, 107) ;
+font-weight: 900;
+font-size: 20px;
+padding: 20px;
+
+}
+
